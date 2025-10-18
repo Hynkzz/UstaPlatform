@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="coverlet.collector" Version="6.0.2"/>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0"/>
+        <PackageReference Include="xunit" Version="2.9.2"/>
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Using Include="Xunit"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\UstaPlatform.Domain\UstaPlatform.Domain.csproj" />
+        <ProjectReference Include="..\UstaPlatform.Infrastructure\UstaPlatform.Infrastructure.csproj" />
+        <ProjectReference Include="..\UstaPlatform.Pricing.Rules\UstaPlatform.Pricing.Rules.csproj" />
+    </ItemGroup>
+
+    <Target Name="CopyPluginsToTestOutput" AfterTargets="Build">
+
+        <Copy SourceFiles="$(SolutionDir)UstaPlatform.Pricing.Rules\bin\$(Configuration)\net9.0\UstaPlatform.Pricing.Rules.dll"
+              DestinationFolder="$(OutDir)plugins"
+              SkipUnchangedFiles="true"
+              OverwriteReadOnlyFiles="true" />
+
+        <Copy SourceFiles="$(SolutionDir)UstaPlatform.Domain\bin\$(Configuration)\net9.0\UstaPlatform.Domain.dll"
+              DestinationFolder="$(OutDir)plugins"
+              SkipUnchangedFiles="true"
+              OverwriteReadOnlyFiles="true" />
+    </Target>
+
+</Project>
