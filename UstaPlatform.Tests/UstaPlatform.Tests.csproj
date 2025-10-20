@@ -26,7 +26,7 @@
 
     <Target Name="CopyPluginsToTestOutput" AfterTargets="Build">
 
-        <Copy SourceFiles="$(SolutionDir)UstaPlatform.Pricing.Rules\bin\$(Configuration)\net9.0\UstaPlatform.Pricing.Rules.dll"
+        <Copy SourceFiles="$(SolutionDir)UstaPlatform.Pricing.Rules\bin\$(Configuration)\net9.0\UstaPlatform.Pricing.dll"
               DestinationFolder="$(OutDir)plugins"
               SkipUnchangedFiles="true"
               OverwriteReadOnlyFiles="true" />
