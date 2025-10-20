@@ -1,9 +1,5 @@
 using UstaPlatform.Domain;
 using UstaPlatform.Infrastructure;
-using Xunit;
-using System;
-using System.IO;
-using System.Reflection;
 
 namespace UstaPlatform.Tests;
 
@@ -29,22 +25,25 @@ public class FiyatlamaMotoruTests
         
         var usta = new Usta { Id = 1, Ad = "Test Usta", Konum = (0, 0) };
         
-        // Talep, Kayıt Zamanından 2 saat sonra işlensin (Fark 3 saatten az).
+        DateTime testKayitZamani = new DateTime(2025, 10, 21, 10, 0, 0); // 21 Ekim 2025 Salı, 10:00
+
         var talep = new Talep { 
             Id = Guid.NewGuid(), 
-            // Tercih edilen zamanı 2 saat sonrası yapalır
-            TercihEdilenZaman = DateTime.Now.AddHours(2) 
+            KayitZamani = testKayitZamani,
+            // Tercih edilen zamanı 2 saat sonrası yapıyoruz (Fark < 3 saat).
+            TercihEdilenZaman = testKayitZamani.AddHours(2) 
         };
         decimal basePrice = 1000m;
 
+        // Motorun metot adı kullanılmalı (Sizin kodunuzda SonUcretHesapla).
         decimal finalPrice = engine.SonUcretHesapla(talep, usta, basePrice);
+
+        // Assert (Doğrulama)
         
-        // Yüklenen kurallar: 
-        // 1. Acil Çağrı Kuralı ( +100 TL) tetiklenir
-        // 2. Hafta Sonu Kuralı ( %15 )tetiklenir
-        decimal priceAfterAcilCagri = 1000m + 100m; 
-        
-        decimal expectedPrice = priceAfterAcilCagri * 1.15m;
+        // Mantıksal Beklenti: SADECE Acil Çağrı Kuralı (+100 TL) TETİKLENMELİDİR.
+        // (Çünkü test Salı gününe sabitlenmiştir, Hafta Sonu Kuralı TETİKLENMEZ.)
+        decimal expectedPrice = 1000m + 100m; // 1100 TL
+
         // Kesin beklenen fiyata eşit olduğunu doğrula
         Assert.Equal(expectedPrice, finalPrice); 
     }
