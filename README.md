@@ -56,7 +56,7 @@ Run tuşuna bas ve projeyi çalıştır.
   - `GeoHelper.cs` 
   - `ParaFormatlayici.cs` 
 ---
-- `UstaPlatform.Pricing.Rules`              --- Fiyatlandırma kurallarının metotları 
+- `UstaPlatform.Pricing`              --- Fiyatlandırma kurallarının metotları 
 
   - `AcilCagriUcretiKurali.cs`   
   - `HaftaSonuEkUcretiKurali.cs`   
