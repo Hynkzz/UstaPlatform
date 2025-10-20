@@ -2,20 +2,17 @@ using UstaPlatform.Domain;
 
 namespace UstaPlatform.Tests;
 
-// Ek puan için istenen Schedule (Çizelge) sınıfının testleri
 public class CizelgeTests
 {
     // Dizinleyici (Indexer) özelliğinin doğru çalıştığını test eder
     [Fact]
-    public void Dizinleyici_VerilenGuneAitDogruIsEmirleriniDondurmeli() 
+    public void Dizinleyici_GuneAitDogruIsleriDondurur() 
     {
-        // Arrange (Hazırlık)
         var schedule = new Cizelge();
         
         var today = DateOnly.FromDateTime(DateTime.Today);
         var tomorrow = today.AddDays(1);
 
-        // Sahte İş Emirleri oluşturuluyor. (İnitializers/Başlatıcılar kullanıldı)
         // İş Emri 1 (Doğru init kullanımı)
         var workOrderToday1 = new IsEmri { 
             Id = Guid.NewGuid(), 
@@ -24,7 +21,7 @@ public class CizelgeTests
             HesaplananFiyat = 100m 
         };
         
-        // İş Emri 2 (KayitZamani init olduğu için manuel atanmamalı, ancak test senaryosu için kalsın.)
+        // İş Emri 2
         var workOrderToday2 = new IsEmri { 
             Id = Guid.NewGuid(), 
             Talep = new Talep { Id = Guid.NewGuid(), /* KayitZamani = DateTime.Now */ }, 
@@ -32,7 +29,7 @@ public class CizelgeTests
             HesaplananFiyat = 200m 
         };
         
-        // İş Emri 3 (Yarının işi)
+        // İş Emri 3
         var workOrderTomorrow = new IsEmri { 
             Id = Guid.NewGuid(), 
             Talep = new Talep { Id = Guid.NewGuid(), /* KayitZamani = DateTime.Now */ }, 
@@ -40,17 +37,14 @@ public class CizelgeTests
             HesaplananFiyat = 300m 
         };
 
-        // Act (Uygulama - İş Emirlerini Çizelgeye Ekleme)
         schedule.AddWorkOrder(workOrderToday1);
         schedule.AddWorkOrder(workOrderToday2);
         schedule.AddWorkOrder(workOrderTomorrow);
 
-        // Dizinleyici (Indexer) ile verilere erişim
         var todayWork = schedule[today];
         var tomorrowWork = schedule[tomorrow];
         var nonExistentDayWork = schedule[today.AddDays(10)]; 
 
-        // Assert (Doğrulama) - Testin başarılı olduğunu kanıtlayan mantıksal kontroller
         
         // 1. Bugüne ait iş emri sayısının 2 olduğunu doğrula
         Assert.Equal(2, todayWork.Count); 

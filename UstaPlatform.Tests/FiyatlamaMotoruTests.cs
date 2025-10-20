@@ -18,15 +18,14 @@ public class FiyatlamaMotoruTests
 {
     // OCP Kanıtı: Dinamik yüklenen kuralların (DLL'lerden) çalıştığını doğrular.
     [Fact]
-    public void CalculateFinalPrice_ShouldApplyAllLoadedRulesSequentially()
+    public void SonFiyatHesapla_TumYukluKurallariSiraylaUygulamali()
     {
         // Arrange
         var engine = new FiyatlamaMotoru();
         
         var usta = new Usta { Id = 1, Ad = "Test Usta", Konum = (0, 0) };
         
-        DateTime testKayitZamani = new DateTime(2025, 10, 21, 10, 0, 0); // 21 Ekim 2025 Salı, 10:00
-
+        DateTime testKayitZamani = new DateTime(2025, 10, 24, 12, 0, 0);
         var talep = new Talep { 
             Id = Guid.NewGuid(), 
             KayitZamani = testKayitZamani,
@@ -40,9 +39,7 @@ public class FiyatlamaMotoruTests
 
         // Assert (Doğrulama)
         
-        // Mantıksal Beklenti: SADECE Acil Çağrı Kuralı (+100 TL) TETİKLENMELİDİR.
-        // (Çünkü test Salı gününe sabitlenmiştir, Hafta Sonu Kuralı TETİKLENMEZ.)
-        decimal expectedPrice = 1000m + 100m; // 1100 TL
+        decimal expectedPrice = 1000m + 200m; // 1200 TL
 
         // Kesin beklenen fiyata eşit olduğunu doğrula
         Assert.Equal(expectedPrice, finalPrice); 
