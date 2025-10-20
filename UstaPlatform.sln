@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UstaPlatform.Domain", "Usta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UstaPlatform.Infrastructure", "UstaPlatform.Infrastructure\UstaPlatform.Infrastructure.csproj", "{53501800-2786-4675-AFAE-264568960AFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UstaPlatform.Pricing.Rules", "UstaPlatform.Pricing.Rules\UstaPlatform.Pricing.Rules.csproj", "{19FBD994-E90E-464A-AD80-FAF94F40D99C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UstaPlatform.Pricing", "UstaPlatform.Pricing\UstaPlatform.Pricing.csproj", "{19FBD994-E90E-464A-AD80-FAF94F40D99C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UstaPlatform.Tests", "UstaPlatform.Tests\UstaPlatform.Tests.csproj", "{FFA4825B-C2D4-4BEA-B6D0-9E485BBC4D4E}"
 EndProject

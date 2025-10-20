@@ -21,7 +21,7 @@
     <ItemGroup>
         <ProjectReference Include="..\UstaPlatform.Domain\UstaPlatform.Domain.csproj" />
         <ProjectReference Include="..\UstaPlatform.Infrastructure\UstaPlatform.Infrastructure.csproj" />
-        <ProjectReference Include="..\UstaPlatform.Pricing.Rules\UstaPlatform.Pricing.Rules.csproj" />
+        <ProjectReference Include="..\UstaPlatform.Pricing\UstaPlatform.Pricing.csproj" />
     </ItemGroup>
 
     <Target Name="CopyPluginsToTestOutput" AfterTargets="Build">
