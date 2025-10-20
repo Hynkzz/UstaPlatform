@@ -63,7 +63,7 @@ Run tuşuna bas ve projeyi çalıştır.
 
 ---
 
-- `UstaPlatform.Pricing.Rules`              --- Unit test projeleri    
+- `UstaPlatform.Tests`              --- Unit test projeleri    
 
   - `CizelgeTests.cs`   
   - `FiyatlamaMotoruTests.cs`   
