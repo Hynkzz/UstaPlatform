@@ -14,9 +14,9 @@ public class Program
     private static List<Usta> _ustalar = new List<Usta>
     {
         // Objeler tanımlandı
-        new Usta { Id = 1, Ad = "Hasan Tesisat", UzmanlikAlani = "Tesisatçı", Puan = 5, Konum = (10, 20), GuncelIsYukü = 2 }, // Id init-only
-        new Usta { Id = 2, Ad = "Hüseyin Elektrik ve Elektronik", UzmanlikAlani = "Elektrikçi", Puan = 4, Konum = (50, 60), GuncelIsYukü = 1 },
-        new Usta { Id = 3, Ad = "Mehmet Marangoz", UzmanlikAlani = "Marangoz", Puan = 4, Konum = (30, 40), GuncelIsYukü = 0 }
+        new Usta { Id = 1, Ad = "Hasan Tesisat", UzmanlikAlani = "Tesisatçı", Puan = 5, Konum = (10, 20), GuncelIsYuku = 2 }, // Id init-only
+        new Usta { Id = 2, Ad = "Hüseyin Elektrik ve Elektronik", UzmanlikAlani = "Elektrikçi", Puan = 4, Konum = (50, 60), GuncelIsYuku = 1 },
+        new Usta { Id = 3, Ad = "Mehmet Marangoz", UzmanlikAlani = "Marangoz", Puan = 4, Konum = (30, 40), GuncelIsYuku = 0 }
     };
 
     private static Vatandas _veli = new Vatandas
@@ -83,7 +83,7 @@ public class Program
             PlanlananZaman = talep.TercihEdilenZaman,
             HesaplananFiyat = finalPrice
         };
-        eslesenUsta.GuncelIsYukü++; 
+        eslesenUsta.GuncelIsYuku++; 
         Console.WriteLine($"[4] İş Emri Oluşturuldu: ID: {isEmri.Id}");
 
         Console.WriteLine($" -> Nihai Fiyat: {ParaFormatlayici.Formatla(isEmri.HesaplananFiyat)}"); 
@@ -120,7 +120,7 @@ public class Program
     {
         return _ustalar
             .Where(u => u.UzmanlikAlani == "Tesisatçı") 
-            .OrderBy(u => u.GuncelIsYukü) 
+            .OrderBy(u => u.GuncelIsYuku) 
             .FirstOrDefault();
     }
     

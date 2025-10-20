@@ -8,5 +8,5 @@ public class Usta
     public string UzmanlikAlani { get; set; } // Tesisatçı, Elektrikçi
     public int Puan { get; set; } 
     public (int X, int Y) Konum { get; set; } // Koordinatı
-    public int GuncelIsYukü { get; set; } 
+    public int GuncelIsYuku { get; set; } 
 }

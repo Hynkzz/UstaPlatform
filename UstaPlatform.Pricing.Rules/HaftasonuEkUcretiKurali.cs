@@ -17,7 +17,7 @@ public class HaftasonuEkUcretiKurali : FiyatKurali // FiyatKurali arayüzünü u
         // Kural Mantığı: Eğer hafta sonu ise (Cumartesi/Pazar), ek ücret uygulanır
         if (dayOfWeek == DayOfWeek.Saturday || dayOfWeek == DayOfWeek.Sunday)
         {
-            // %20 ek ücret ekleme işlemi
+            // %15 ek ücret ekleme işlemi
             return currentPrice * 1.15m;
         }
 
