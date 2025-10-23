@@ -16,7 +16,7 @@ public class TestDiscountRule : IFiyatKurali
 
 public class FiyatlamaMotoruTests
 {
-    // OCP Kanıtı: Dinamik yüklenen kuralların (DLL'lerden) çalıştığını doğrular.
+    // OCP Kanıtı: Dinamik yüklenen kuralların (DLL'lerden) çalıştığını doğrular
     [Fact]
     public void SonFiyatHesapla_TumYukluKurallariSiraylaUygulamali()
     {
@@ -29,12 +29,10 @@ public class FiyatlamaMotoruTests
         var talep = new Talep { 
             Id = Guid.NewGuid(), 
             KayitZamani = testKayitZamani,
-            // Tercih edilen zamanı 2 saat sonrası yapıyoruz (Fark < 3 saat).
             TercihEdilenZaman = testKayitZamani.AddHours(2) 
         };
         decimal basePrice = 1000m;
 
-        // Motorun metot adı kullanılmalı (Sizin kodunuzda SonUcretHesapla).
         decimal finalPrice = engine.SonUcretHesapla(talep, usta, basePrice);
 
         // Assert (Doğrulama)
