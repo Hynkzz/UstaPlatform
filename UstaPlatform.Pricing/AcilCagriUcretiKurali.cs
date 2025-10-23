@@ -11,7 +11,6 @@ public class AcilCagriUcretiKurali : IFiyatKurali // FiyatKurali arayüzünü uy
     // Mevcut fiyatı alır ve kuralı uygular
     public decimal CalculatePrice(decimal currentPrice, Talep talep, Usta usta)
     {
-        // Kayıt zamanı Talep nesnesi oluşturulurken init-only olarak atanmıştı
         var timeDifference = talep.TercihEdilenZaman - talep.KayitZamani;
 
         // Kural Mantığı: 3 saatten az ise acil çağrıdır
