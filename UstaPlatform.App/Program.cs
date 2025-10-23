@@ -7,7 +7,6 @@ namespace UstaPlatform;
 
 public class Program
 {
-    // Fiyatlama Motoru , uygulamanın temel bağımlılığıdır (Bağımlılıkların Tersine Çevrilmesi Prensibi)
     private static readonly FiyatlamaMotoru FiyatlamaMotoru = new();  // Bir kez değer atandıktan sonra tekrar değiştirilememesi icin private readonly olarak tanimlanir
     
     private static List<Usta> _ustalar = new List<Usta>
@@ -52,7 +51,7 @@ public class Program
 
 
 
-        // 2. UYGULAMA USTA EŞLEŞTİRİR (Basit Buluşsal Yöntem)
+        // 2. UYGULAMA USTA EŞLEŞTİRİR 
         var eslesenUsta = MatchMaster(talep); 
 
         if (eslesenUsta == null)
