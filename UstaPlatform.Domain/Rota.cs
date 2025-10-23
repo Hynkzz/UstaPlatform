@@ -5,7 +5,6 @@ public class Rota : IEnumerable<(int X, int Y)>
 {
     private readonly List<(int X, int Y)> _stops = new List<(int X, int Y)>();
 
-    // Artık koleksiyon başlatıcılardan gelen tek argümanı (tuple'ı) kabul ediyor.
     public void Add((int X, int Y) coordinate) 
     {
         _stops.Add(coordinate);

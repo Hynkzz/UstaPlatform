@@ -10,10 +10,8 @@ public class Program
     // Fiyatlama Motoru , uygulamanın temel bağımlılığıdır (Bağımlılıkların Tersine Çevrilmesi Prensibi)
     private static readonly FiyatlamaMotoru FiyatlamaMotoru = new();  // Bir kez değer atandıktan sonra tekrar değiştirilememesi icin private readonly olarak tanimlanir
     
-    // Veri Deposu simülasyonu
     private static List<Usta> _ustalar = new List<Usta>
     {
-        // Objeler tanımlandı
         new Usta { Id = 1, Ad = "Hasan Tesisat", UzmanlikAlani = "Tesisatçı", Puan = 5, Konum = (10, 20), GuncelIsYuku = 2 }, // Id init-only
         new Usta { Id = 2, Ad = "Hüseyin Elektrik ve Elektronik", UzmanlikAlani = "Elektrikçi", Puan = 4, Konum = (50, 60), GuncelIsYuku = 1 },
         new Usta { Id = 3, Ad = "Mehmet Marangoz", UzmanlikAlani = "Marangoz", Puan = 4, Konum = (30, 40), GuncelIsYuku = 0 }
