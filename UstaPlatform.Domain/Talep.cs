@@ -7,7 +7,7 @@ public class Talep
     public DateTime KayitZamani { get; init; } = DateTime.Now; 
     
     // Basit bir Talep Tipi tanımı
-    public string TalepTipi { get; set; } // Örn: Sızıntı, Sigorta Atması, Dolap Tamiri vs.
+    public string TalepTipi { get; set; } 
     public string Aciklama { get; set; }
     public Vatandas TalepEden { get; set; }
     public (int X, int Y) Konum { get; set; }
