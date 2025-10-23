@@ -1,12 +1,10 @@
-using System.Runtime.CompilerServices; // CallerArgumentExpression için gerekli
-
-namespace UstaPlatform.Infrastructure; // Altyapı katmanında yer alır
+using System.Runtime.CompilerServices;
+namespace UstaPlatform.Infrastructure; 
 
 // Statik yardımcı sınıf: Parametre doğrulama sorumluluğu (SRP)
 public static class Dogrulama 
 {
     // Parametrenin null olup olmadığını kontrol eder
-    // Tipi class olan referans tipler için kullanılır.
     public static T NullDegilDogrula<T>( 
         T? deger, 
         // CallerArgumentExpression: Parametre adını otomatik yakalamak için C# özelliği

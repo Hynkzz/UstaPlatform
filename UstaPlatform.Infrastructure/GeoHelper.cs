@@ -3,7 +3,7 @@ namespace UstaPlatform.Infrastructure;
 // Statik yardımcı sınıf (Sadece bir görevi yerine getirme sorumluluğu - SRP)
 public static class GeoHelper
 {
-    // İki nokta arasındaki mesafeyi (basit Öklid mesafesi) hesaplar.
+    // İki nokta arasındaki mesafeyi hesaplar
     public static double MesafeHesapla((int X, int Y) point1, (int X, int Y) point2) 
     {
         int dx = point1.X - point2.X;

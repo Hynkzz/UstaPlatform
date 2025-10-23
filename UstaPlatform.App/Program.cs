@@ -30,7 +30,7 @@ public class Program
     public static void Main(string[] args)
     {
         Console.WriteLine("=============================================");
-        Console.WriteLine(" UstaPlatform: Şehrin Uzmanlık Platformu");
+        Console.WriteLine(" UstaPlatform: Şehir Talep Platformu");
         Console.WriteLine("=============================================\n");
 
         SimulateWorkflow();

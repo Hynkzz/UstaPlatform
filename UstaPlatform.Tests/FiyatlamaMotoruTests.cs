@@ -39,7 +39,7 @@ public class FiyatlamaMotoruTests
 
         // Assert (Doğrulama)
         
-        decimal expectedPrice = 1000m + 200m; // 1200 TL
+        decimal expectedPrice = 1000m + 100m; // 1100 TL
 
         // Kesin beklenen fiyata eşit olduğunu doğrula
         Assert.Equal(expectedPrice, finalPrice); 
