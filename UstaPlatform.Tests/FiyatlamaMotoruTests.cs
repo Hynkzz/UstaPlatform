@@ -3,7 +3,7 @@ using UstaPlatform.Infrastructure;
 
 namespace UstaPlatform.Tests;
 
-public class TestDiscountRule : FiyatKurali
+public class TestDiscountRule : IFiyatKurali
 {
     public string RuleName => "Test İndirim Kuralı";
 

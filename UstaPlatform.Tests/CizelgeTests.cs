@@ -13,7 +13,6 @@ public class CizelgeTests
         var today = DateOnly.FromDateTime(DateTime.Today);
         var tomorrow = today.AddDays(1);
 
-        // İş Emri 1 (Doğru init kullanımı)
         var workOrderToday1 = new IsEmri { 
             Id = Guid.NewGuid(), 
             Talep = new Talep { Id = Guid.NewGuid() }, // Talep objesi minimalist başlatıldı
@@ -21,7 +20,6 @@ public class CizelgeTests
             HesaplananFiyat = 100m 
         };
         
-        // İş Emri 2
         var workOrderToday2 = new IsEmri { 
             Id = Guid.NewGuid(), 
             Talep = new Talep { Id = Guid.NewGuid(), /* KayitZamani = DateTime.Now */ }, 
@@ -29,7 +27,6 @@ public class CizelgeTests
             HesaplananFiyat = 200m 
         };
         
-        // İş Emri 3
         var workOrderTomorrow = new IsEmri { 
             Id = Guid.NewGuid(), 
             Talep = new Talep { Id = Guid.NewGuid(), /* KayitZamani = DateTime.Now */ }, 

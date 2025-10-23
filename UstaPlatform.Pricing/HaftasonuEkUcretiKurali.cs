@@ -1,9 +1,9 @@
 using UstaPlatform.Domain;
 
-namespace UstaPlatform.Pricing.Rules;
+namespace UstaPlatform.Pricing;
 
 // Fiyatlama Motoru tarafından dinamik olarak yüklenen somut kural sınıfı
-public class HaftasonuEkUcretiKurali : FiyatKurali // FiyatKurali arayüzünü uygular (OCP)
+public class HaftasonuEkUcretiKurali : IFiyatKurali // FiyatKurali arayüzünü uygular (OCP)
 {
     // Kuralın adını tanımlar
     public string RuleName => "Hafta Sonu Ek Ücreti (%15)";

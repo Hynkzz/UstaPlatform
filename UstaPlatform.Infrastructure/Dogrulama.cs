@@ -1,7 +1,6 @@
 using System.Runtime.CompilerServices;
 namespace UstaPlatform.Infrastructure; 
 
-// Statik yardımcı sınıf: Parametre doğrulama sorumluluğu (SRP)
 public static class Dogrulama 
 {
     // Parametrenin null olup olmadığını kontrol eder

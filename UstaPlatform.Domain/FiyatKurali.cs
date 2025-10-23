@@ -1,6 +1,6 @@
 namespace UstaPlatform.Domain;
 
-public interface FiyatKurali
+public interface IFiyatKurali
 {
     // Kuralın adını döndürür (Geliştirici takibi için).
     string RuleName { get; }

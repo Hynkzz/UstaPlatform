@@ -1,12 +1,12 @@
 using System.Reflection; // Dinamik DLL yükleme (Reflection) için gereklidşr
 using UstaPlatform.Domain; 
 
-namespace UstaPlatform.Infrastructure; // Altyapı katmanında yer alır (SRP)
+namespace UstaPlatform.Infrastructure; 
 
 // Plug-in mimarisini yöneten çekirdek sınıftır
 public class FiyatlamaMotoru
 {
-    private readonly List<FiyatKurali> _rules = new(); // Yüklenen kural örneklerini tutar
+    private readonly List<IFiyatKurali> _rules = new(); // Yüklenen kural örneklerini tutar
     
     // Eklenti klasörünün yolunu dinamik olarak belirler
     private readonly string PluginDirectory = 
@@ -18,7 +18,6 @@ public class FiyatlamaMotoru
         KuralYukle();
     }
     
-    // Kuralları DLL'lerden dinamik olarak yükler (OCP'nin anahtarı)
     private void KuralYukle()
     {
         _rules.Clear();
@@ -38,13 +37,13 @@ public class FiyatlamaMotoru
                 
                 // Reflection: FiyatKurali arayüzünü uygulayan somut sınıfları bulur
                 var ruleTypes = assembly.GetTypes()
-                    .Where(t => typeof(FiyatKurali).IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract)
+                    .Where(t => typeof(IFiyatKurali).IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract)
                     .ToList(); 
 
                 foreach (var type in ruleTypes)
                 {
                     // Reflection: Kuralın bir örneğini oluşturur
-                    var ruleInstance = Activator.CreateInstance(type) as FiyatKurali;
+                    var ruleInstance = Activator.CreateInstance(type) as IFiyatKurali;
 
                     if (ruleInstance != null)
                     {

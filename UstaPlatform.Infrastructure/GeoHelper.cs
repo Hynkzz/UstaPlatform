@@ -1,6 +1,5 @@
 namespace UstaPlatform.Infrastructure;
 
-// Statik yardımcı sınıf (Sadece bir görevi yerine getirme sorumluluğu - SRP)
 public static class GeoHelper
 {
     // İki nokta arasındaki mesafeyi hesaplar

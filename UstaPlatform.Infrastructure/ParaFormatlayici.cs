@@ -2,7 +2,6 @@ using System.Globalization;
 
 namespace UstaPlatform.Infrastructure;
 
-// Tek Sorumluluk Prensibine (SRP) uygun statik yardımcı sınıf
 public static class ParaFormatlayici 
 {
     // Türkçe kültür ayarını (tr-TR) sabitlendi
