@@ -1,12 +1,10 @@
 namespace UstaPlatform.Domain;
 
-// Tek Sorumluluk Prensibi (SRP): Sadece ustaların iş takvimini yönetmekten sorumludur
 public class Cizelge
 {
     // İş Emirlerini tutacak olan dahili sözlük
     private readonly Dictionary<DateOnly, List<IsEmri>> _dailyWork = new();
 
-    // Cizelge[DateOnly day] yapısıyla o güne ait işlere kolay erişim sağlar
     public List<IsEmri> this[DateOnly day]
     {
         get
